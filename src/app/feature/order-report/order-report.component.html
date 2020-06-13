@@ -1,0 +1,36 @@
+<!-- The datepicker popup will automatically inherit the color palette (primary, accent, or warn) 
+from the mat-form-field it is attached to. 
+If you would like to specify a different palette for the popup you can do so by setting the 
+color property on mat-datepicker. -->
+<br />
+<div class="container">
+    <form [formGroup]="formModel"  #reportType="ngForm">
+
+        <div class="row">
+            <mat-form-field color="accent">
+                <mat-label>Start Date</mat-label>
+                <input matInput [matDatepicker]="picker1" formControlName="StartDate">
+                <!-- <app-alert *ngIf="isFieldValid('StartDate')" [message]="error" (close)="onHandleError()"></app-alert> -->
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field color="accent">
+                <mat-label>End Date</mat-label>
+                <input matInput [matDatepicker]="picker2" formControlName="EndDate">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2 color="primary"></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Report Name</mat-label>
+                <input matInput placeholder="" value="" formControlName="ReportName">
+            </mat-form-field>
+            <div class="example-button-row">
+                <!-- <app-alert [error]="errormessage"></app-alert> -->
+                <button mat-raised-button color="accent" (click)="submit()">Generate Report</button>
+            </div>
+
+        </div>
+    </form>
+</div>

@@ -1,0 +1,39 @@
+
+<div *ngIf="Apploading" class="container">
+  <table style="border: 1px;" id="ReportsData" class="table table-hover table-striped table-bordered">
+    <thead id="Header" class="thead-dark">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Total Amount</th>
+        <th scope="col">Order Date</th>
+        <th scope="col">isDiscontinued</th>
+        <th scope="col">Customer Name</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let order of Orderdetails | paginate: config">
+
+      <tr>
+        <th scope="row">{{order.id}}</th>
+        <td (mouseenter)="Overlay($event)">{{order.productName}}</td>
+        <td>{{order.quantity}}</td>
+        <td>{{order.totalAmount | currency:'INR'}}</td>
+        <td>{{order.orderDate  | date: 'dd/MM/yyyy'}}</td>
+        <td>{{order.isDiscontinued ?'Yes':'No'}}</td>
+        <td>{{order.customerName}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class=row>
+    <div class="col-sm-6">
+      <pagination-controls [id]="config.id" (pageChange)="pageChanged($event)"></pagination-controls>
+    </div>
+    <div class="col-sm-6">
+      <button class="btn btn-primary my-2 my-sm-0 pull-right" (click)='onPreview("ReportsData")'>Print</button>
+    </div>
+  </div>
+  <div id="overlay" class="overlay" (mouseleave)="removeOverlay()">
+    <button id="btnOverlay" class="btnOverlay"> Click to Overlay</button>
+  </div>
+</div>

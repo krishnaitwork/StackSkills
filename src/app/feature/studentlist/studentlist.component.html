@@ -1,0 +1,40 @@
+<app-modal my_modal_title="Student List" [modalPopupdata]="popupModel">
+  <div class="d-flex bd-highlight">
+    <div class="p-2 flex-grow-1 bd-highlight" id="custom-search-input">
+      <div class="input-group col-md-12">
+          <input type="text" class="form-control input-lg"
+          placeholder="Search" autocomplete="off"
+          [(ngModel)]="searchStudent" #txtBoxStudent/>
+          <span class="input-group-btn">
+            <i class="fa fa-search"></i>
+          </span>
+      </div>
+    </div>
+  </div>
+    <div *ngIf="Apploading" class="d-flex p-2 bd-highlight">
+        <table class="table table-fixed">
+          <thead class="thead-light">
+            <tr>
+                <th class="allCheckbox" scope="col">
+                <input type="checkbox" aria-label="Checkbox header" [disabled]="filteredstudentList?.length==0"
+                [(ngModel)]="selectedAll" (change)="SelectAll($event.target.checked)"/>
+              </th>
+              <th scope="col">Student List</th>
+              <th scope="col" *ngIf="this.isAdministrator" class="thTxtTitleStyle">Roles</th>
+            </tr>
+          </thead>
+          <tbody class="scrollbar scrollbar-primary">
+            <tr *ngFor="let item of filteredstudentList" class="force-overflow itemStyle">
+              <td class="checkbox" scope="row">
+                <input id="a" type="checkbox" value={{item.userName}}
+                [(ngModel)]="item.isSelected" (change)="CheckAllSelected()" aria-label="Checkbox"
+                />
+              </td>
+              <td title="{{item.email}}">{{item.userName}}</td>
+              <td *ngIf="this.isAdministrator" class="thTxtTitleStyle" title="{{item.role}}">{{item.role}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+</app-modal>

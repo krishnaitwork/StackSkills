@@ -1,0 +1,83 @@
+
+<!--Start Container-->
+<div class="container">
+<div class="card">
+<article class="card-body mx-auto" style="max-width: 400px;">
+	<h4 class="card-title mt-3 text-center">Create Account</h4>
+	<p>
+		<a href="www.Twitter.com" class="btn btn-block btn-twitter"> <i class="fa fa-twitter"></i>   Login via Twitter</a>
+		<a href="www.facebook.com" class="btn btn-block btn-facebook"> <i class="fa fa-facebook-f"></i>   Login via facebook</a>
+	</p>
+	<p class="divider-text">
+        <span class="bg-light">OR</span>
+    </p>
+	<form [formGroup]="service.formModel"  (ngSubmit)="onSubmit()">
+	<div class="form-group input-group">
+		<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+		 </div>
+        <input formControlName="FirstName" class="form-control" placeholder="First Name" type="text">
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+		<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+		 </div>
+        <input formControlName="LastName" class="form-control" placeholder="Last Name" type="text">
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+		 </div>
+        <input formControlName="Email" class="form-control" placeholder="Email address" type="email">
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+		</div>
+		<select class="custom-select" style="max-width: 120px;">
+		    <option selected="">+91</option>
+		    <option value="1">+1</option>
+		    <option value="2">+2</option>
+		    <option value="3">+3</option>
+		</select>
+    	<input formControlName="MobileNo" class="form-control" placeholder="Phone number" type="text">
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+		</div>
+		<select formControlName="Role" class="form-control">
+			<option selected="0"> Select job type</option>
+			<option>Administrator</option>
+			<option>User</option>
+            <option>Student</option>
+			<option>Customer</option>
+			<option>Manager</option>
+			<option>Developer</option>
+			<option>Trainee</option>
+		</select>
+	</div> <!-- form-group end.// -->
+	<div formGroupName="Passwords">
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		</div>
+        <input formControlName="Password" class="form-control" placeholder="Create password" type="password">
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		</div>
+        <input formControlName="ConfirmPassword" class="form-control" placeholder="Repeat password" type="password">
+    </div> <!-- form-group// -->                                      
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block" > Create Account  </button>
+	</div> <!-- form-group// --> 
+	</div>     
+    <p *ngIf ="GetToken()" class="text-center">Have an account? <a href="/user/login">Log In</a> </p>                                                                 
+</form>
+</article>
+</div> <!-- card.// -->
+
+</div> 
+<!--container end.//-->

@@ -1,0 +1,45 @@
+<div [formGroup]="empservice.frmGroup" autocomplete="off" class="container">
+  <div class="row">  
+  <mat-form-field appearance="outline">
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="firstName">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName">
+      </mat-form-field>
+    </div>
+   <div class="row">
+      <mat-form-field color="accent">
+        <mat-label>Start Date</mat-label>
+        <input matInput [matDatepicker]="picker1" formControlName="birthDate">
+        <!-- <app-alert *ngIf="isFieldValid('StartDate')" [message]="error" (close)="onHandleError()"></app-alert> -->
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>City</mat-label>
+        <input matInput formControlName="city">
+      </mat-form-field>
+    </div>
+   <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Country</mat-label>
+        <input matInput formControlName= "country">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Phone</mat-label>
+        <input matInput formControlName="phoneNo">
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Role</mat-label>
+        <input matInput formControlName="role">
+      </mat-form-field>
+      <div class="example-button-row">
+        <!-- <app-alert [error]="errormessage"></app-alert> -->
+        <button mat-raised-button color="primary"  (click)="submit()">{{empButton}}</button>
+    </div>
+  </div >
+  </div>

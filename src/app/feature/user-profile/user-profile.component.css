@@ -1,0 +1,55 @@
+
+/*Sort oder select text box style -Start- */
+.form-control,
+.btn-outline-primary,
+.btn-outline-primary:hover,
+.show>.btn-outline-primary.dropdown-toggle:focus,
+.btn-outline-primary:not(:disabled):not(.disabled).active,
+.btn-outline-primary:not(:disabled):not(.disabled):active,
+.show>.btn-outline-primary.dropdown-toggle {
+    font: 13px Arial;
+    box-shadow: none;
+    color: #666666;
+    border-color: #DFDFDF;    
+    background-color: transparent;
+}
+
+/*Sort oder select text box style -End- */
+
+/*Grid related style -Start- */
+.table .itemStyle td {
+    border: 0px;
+    font: 14px Arial;
+    border-top: 1px solid #F5F5F5;
+}
+
+
+.table th {
+    border: 1px solid #F5F5F5;
+}
+
+
+
+.table .thead-light th {
+    color: #333333;
+    font: bold 14px Arial;
+    border: 1px solid #F5F5F5;
+    background-color: #F5F5F5;
+    margin-right: 10px;
+}
+
+.thTxtTitleStyle {
+    width: 200px;
+}   
+
+.container .table{
+    margin: 0;
+}
+
+.fa-superpower{
+    position: relative;
+    color: #60aa0c;
+    top: 5px;
+}
+
+/*Grid related style -End- */

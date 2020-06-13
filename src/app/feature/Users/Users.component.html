@@ -1,0 +1,49 @@
+<form *ngIf="Apploading" style="display: inline; margin: 0px;padding: 0px;">
+  <div class="container">
+    <!-- <div class="row">
+     <label class="col-sm-1">Token :</label> <textarea style="background-color: tomato;" value={{tokendata}}  id="tokendataval" type="text" class="form-control sm-col-4">
+      </textarea>
+    </div> -->
+    <br/>
+        <div class="form-group row">
+          <label for="select" class="col-2 col-form-label">Summary :</label> 
+          <div class="col-2">
+            <select id="select" (change)="filterUsers($event.target.value)" name="select" class="custom-select">
+              <option value="0">All</option>
+              <option *ngFor="let user of datav" value={{user}}>{{user}}</option>
+            </select>
+          </div>
+          <div class="col-2">
+            <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div> 
+
+        <div class="col-md-6">
+          <app-hbutton></app-hbutton>
+        </div>
+    <br />
+    <table class="table table-hover table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">User Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Role</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let user of filteredUserDetails ;let indexval = index">
+
+        <tr>
+          <th scope="row">{{user.userID}}</th>
+          <td>{{user.userName}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.role}}</td>
+          <td *ngIf="IconLoading">
+            <i [ngClass]="GetClass()" aria-hidden="true"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</form>

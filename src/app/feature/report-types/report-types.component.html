@@ -1,0 +1,25 @@
+<div class="container">
+    <h1>Reports</h1>
+
+    <form [formGroup]="form" (ngSubmit)="submit()" #reportType="ngForm">
+        <div class="form-group row">
+            <label for="select" class="col-2 col-form-label">Report Types :</label> 
+            <div class="col-2">
+              <select formControlName="frmReport" id="select" (change)="changeWebsite($event)" name="select" class="custom-select">
+                <option value="0">All</option>
+                <option *ngFor="let report of reportTypes">{{report}}</option>
+            </select>
+            <div *ngIf="f.frmReport.touched && f.frmReport.invalid" class="alert alert-danger">
+                <div *ngIf="f.frmReport.errors.required">Name is required.</div>
+            </div>
+            </div>
+            <div class="col-2">
+                <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+            </div>
+          </div> 
+    </form>
+
+    
+
+
+</div>

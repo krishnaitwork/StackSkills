@@ -1,0 +1,23 @@
+<br/>
+<br/>
+<div class="row container-fluid" *ngIf="dataloaded">
+  <div class="card col-md-6">
+    <div class="chart-wrapper col">
+      <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType">
+      </canvas>
+    </div>
+    <br/>
+    <span style="text-align: center;">Doughnut Chart</span>
+  </div>
+  <div class="card col-md-6">
+
+    <div class="chart-wrapper col">
+      <canvas baseChart [data]="ChartData" [labels]="ChartLabel" [chartType]="pieChartType" [options]="pieChartOptions"
+        [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+      </canvas>
+    </div>
+    <br/>
+
+    <span style="text-align: center;">PIE Chart</span>
+  </div>
+</div>

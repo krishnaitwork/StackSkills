@@ -1,0 +1,58 @@
+<br/>
+<form [formGroup]="service.formModel" autocomplete="off" (submit)="onSubmit()">
+<div class="container">
+  <div class="row justify-content-center">
+
+  <div style="background-color:#41aaa2; height:400px; width:400px; border-radius:30px; text-align:center;" class="col-md-offset-4">
+  <h1 style="text-align:center; padding-top:30px; color:#ffffff;">Sign Up</h1>
+  
+  <div class="col-sm-12" style="padding-top:10px;">
+    <input class="form-control" formControlName="UserName" placeholder="UserName"  style="border-radius:15px;">
+    <label class="text-danger" *ngIf="service.formModel.get('UserName').touched && service.formModel.get('UserName').errors?.required">This
+      field is mandatory.</label>
+  </div>
+  <div class="col-sm-12" style="padding-top:10px;">
+    <input class="form-control" formControlName="Email" placeholder="Email"  style="border-radius:15px;">
+    <label class="text-danger" *ngIf="service.formModel.get('Email').touched && service.formModel.get('Email').errors?.email">Invalid
+      email address.</label>  
+    </div>
+  <div class="col-sm-12" style="padding-top:10px;">
+    <input class="form-control" formControlName="FirstName" placeholder="FirstName"  style="border-radius:15px;">
+  </div>
+  <div class="col-sm-12" style="padding-top:10px;">
+    <input class="form-control" formControlName="LastName" placeholder="LastName"  style="border-radius:15px;">
+  </div>
+
+  <div formGroupName="Passwords">
+    <div class="form-group required">
+      <div class="col-sm-12" style="padding-top:10px;">
+
+      <input type="password" class="form-control" formControlName="Password" placeholder="Password"  style="border-radius:15px;">
+    </div>
+
+      <label class="text-danger" *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.required">This
+        field is mandatory.</label>
+      <label class="text-danger" *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.minlength">Minimum
+        4 characters required.</label>
+  </div>
+
+    <div class="form-group required">
+      <div class="col-sm-12" style="padding-top:10px;">
+
+      <input type="password" class="form-control" formControlName="ConfirmPassword" placeholder="ConfirmPassword"  style="border-radius:15px;">
+    </div>
+
+      <label class="text-danger" *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.required">This
+        field is mandatory.</label>
+      <label class="text-danger" *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch">Confirm
+        Password does not match.</label>
+  </div>
+
+  </div>
+
+  <button type="submit" class="col-md-4 col-md-offset-4 btn" style="background-color:mediumspringgreen; color:#626a69; font-size:20px; margin-top:10px;" [disabled]="!service.formModel.valid">Sign Up</button>
+
+  </div>
+</div>
+</div>
+</form>

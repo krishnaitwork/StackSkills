@@ -1,0 +1,28 @@
+<app-modal my_modal_title="User Detail" [modalPopupdata]="popupModel">
+    <div class="d-flex p-2 bd-highlight lg">
+      User Profile
+    </div>
+
+    <table class="table table-fixed">
+        <thead class="thead-light">
+            <tr>
+            <th scope="col">Id</th>
+            <th scope="col">User Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Role</th>
+            <th scope="col">Status</th>
+
+          </tr>
+        </thead>
+        <tbody class="custom-scrollbar">
+          
+          <tr class="itemStyle">
+            <th scope="row">01</th>
+            <td>Kishnak</td>
+            <td>krishnakawk@gmail.com</td>
+            <td>Administrator</td>
+            <td><i class="fa fa-superpowers" aria-hidden="true"></i></td>
+          </tr>
+        </tbody>
+      </table>
+</app-modal>

@@ -1,0 +1,6 @@
+<app-navigation></app-navigation>
+<app-report-types (OutPutParameter)=GetOutpuVal($event)></app-report-types>
+<app-Users *ngIf= "reporttype == 'Users Details'"></app-Users>
+<app-orders *ngIf= "reporttype == 'Order Details'"></app-orders>
+<app-user-report *ngIf= "reporttype == 'Users Report'"></app-user-report>
+<app-order-report *ngIf= "reporttype == 'Order Report'"></app-order-report>

@@ -1,0 +1,29 @@
+<!-- <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand text-white">Stack Skills</a>       
+         <ul class="pull-right">
+            <li class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">Logout</li>
+            
+        </ul>       
+  </nav> -->
+
+<app-navigation></app-navigation>
+
+<mat-tab-group>
+
+  <mat-tab label="Dashboard">
+    <app-pie-chart></app-pie-chart>
+  </mat-tab>
+  <mat-tab label="User Details">
+    <app-Users></app-Users>
+  </mat-tab>
+  <mat-tab label="Orders">
+    <app-orders></app-orders>
+  </mat-tab>
+  <mat-tab label="Stastics">
+    <app-Users></app-Users>
+  </mat-tab>
+  <mat-tab label="Register User">
+    <app-register-user></app-register-user>
+  </mat-tab>
+
+</mat-tab-group>
